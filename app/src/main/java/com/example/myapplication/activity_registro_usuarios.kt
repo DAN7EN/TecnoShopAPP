@@ -30,7 +30,7 @@ class activiy_registro_usuarios : AppCompatActivity() {
                     if (task.isSuccessful) {
                         val firebaseUser = auth.currentUser
                         // Aquí puedes realizar operaciones adicionales si el registro es exitoso
-                        tex
+                        Toast.makeText(this, "REGISTRO EXITOSO", Toast.LENGTH_LONG).show()
                     } else {
                         Toast.makeText(
                             this,
