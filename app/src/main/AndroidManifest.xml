@@ -29,6 +29,12 @@
         <activity android:name=".activiy_registro_usuarios">
 
         </activity>
+
+        <activity android:name=".carritoActivity">
+
+        </activity>
     </application>
+
+
 
 </manifest>

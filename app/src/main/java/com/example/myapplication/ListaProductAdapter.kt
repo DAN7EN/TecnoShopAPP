@@ -1,11 +1,13 @@
 package com.example.myapplication
 
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import android.widget.ImageView
+import com.google.android.material.floatingactionbutton.FloatingActionButton
 
 class ListaProductAdapter(private val listaProductos: ArrayList<Product>) : RecyclerView.Adapter<ListaProductAdapter.PersonaViewHolder>() {
 
@@ -39,5 +41,15 @@ class ListaProductAdapter(private val listaProductos: ArrayList<Product>) : Recy
         val viewdescripcion: TextView = itemView.findViewById(R.id.viewDescripcion)
         val viewValor: TextView = itemView.findViewById(R.id.viewValor)
         val imageView: ImageView = itemView.findViewById(R.id.imageView)
+        val btnAgregarCarrito: FloatingActionButton = itemView.findViewById(R.id.floatingActionButton)
+
+        init {
+            // Agrega un listener al botón
+            btnAgregarCarrito.setOnClickListener {
+                // Abre la actividad CarritoActivity
+                val intent = Intent(itemView.context, carritoActivity::class.java)
+                itemView.context.startActivity(intent)
+            }
+        }
     }
 }
